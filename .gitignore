@@ -17,9 +17,7 @@ data/processed/point/datos_SA_1960-2015_v1.2_04_obs-bc.RDS
 data/processed/point/datos_SA_1960-2015_v1.2_04_obs-mod.RDS
 data/processed/point/datos_SA_1960-2015_v1.2.RDS
 data/processed/vector
-output/01_unification
-output/02_quality-control
-output/03_gap-filling
-output/04_homogenization
-output/05_visualization
-output/06_database
+output/
+output_xgboost/
+output_rf/
+output_glm/
