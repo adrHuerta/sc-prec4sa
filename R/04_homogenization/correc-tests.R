@@ -228,11 +228,11 @@ quantile_matching_relative <- function(model_target,
   model_nona_nearby <- lapply(model2_nearby, function(z) z[!is.na(z)])
 
   quantiles_model_target <- compute_quantiles(
-    obs_nona_target, length.out = quantiles_range[1]
+    model_nona_target, length.out = quantiles_range[1]
   )
 
   quantiles_obs_target <- compute_quantiles(
-    model_nona_target, length.out = quantiles_range[1]
+    obs_nona_target, length.out = quantiles_range[1]
   )
 
   quantiles_model_nearby <- lapply(
@@ -247,9 +247,14 @@ quantile_matching_relative <- function(model_target,
   )
   quantiles_obs_nearby <- do.call(cbind, quantiles_obs_nearby)
 
-  a_vect <- ((quantiles_obs_nearby - quantiles_model_nearby) -
-      (quantiles_obs_target - quantiles_model_target)
-  )
+  # a_vect <- ((quantiles_obs_nearby - quantiles_model_nearby) -
+  #     (quantiles_obs_target - quantiles_model_target)
+  # )
+  a_vect <- (
+  (quantiles_obs_target - quantiles_model_target) -
+  (quantiles_obs_nearby - quantiles_model_nearby)
+)
+
   moving_a_vect <- apply(
     a_vect, 2,
     function(x) {

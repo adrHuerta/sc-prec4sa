@@ -20,11 +20,13 @@ raw_data <- readRDS(
 )
 
 ## stages for homogenization
+# param_spt <- list(list(lmt_xy = 1e+6,
+#                        lmt_n = 8),
+#                   list(lmt_xy = 1e+6,
+#                        lmt_n = 8),
+#                   list(lmt_xy = 1e+6,
+#                        lmt_n = 8))
 param_spt <- list(list(lmt_xy = 1e+6,
-                       lmt_n = 8),
-                  list(lmt_xy = 1e+6,
-                       lmt_n = 8),
-                  list(lmt_xy = 1e+6,
                        lmt_n = 8))
 
 ## ecoregions

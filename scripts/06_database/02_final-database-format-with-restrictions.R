@@ -10,7 +10,8 @@ final_database_path <- file.path("output", "06_database")
 # same of the hmg or gf
 
 load(
-  file.path(dirname(dirname(getwd())),
+  file.path(
+    "/scratch2/ahuerta",
             "datasets",
             "observed_precipitation",
             "sn_raw",
@@ -99,7 +100,7 @@ for (ecr_i in ecr) {
     function(idx) {
       
       
-      hmg_bc_data <- dir(file.path(hmg_results_path_bc, ecr_i, 3),
+      hmg_bc_data <- dir(file.path(hmg_results_path_bc, ecr_i, 1),
                          recursive = TRUE,
                          full.names = TRUE,
                          pattern = idx)
@@ -107,7 +108,7 @@ for (ecr_i in ecr) {
       colnames(hmg_bc_data) <- "hmg_obs_bc"
       
       
-      hmg_mod_data <- dir(file.path(hmg_results_path_mod, ecr_i, 3),
+      hmg_mod_data <- dir(file.path(hmg_results_path_mod, ecr_i, 1),
                           recursive = TRUE,
                           full.names = TRUE,
                           pattern = idx)
